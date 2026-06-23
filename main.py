@@ -11,7 +11,10 @@ class InputText(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "Text Classification API"}
+    return {
+        "message": "Text Classification API",
+        "version": "1.0"
+    }
 
 @app.post("/predict")
 def classify_text(data: InputText):
