@@ -16,6 +16,10 @@ def home():
         "version": "1.0"
     }
 
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+
 @app.post("/predict")
 def classify_text(data: InputText):
     text = data.text
